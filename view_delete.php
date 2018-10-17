@@ -40,13 +40,30 @@
     
     echo "</br>";
 
+    echo  "<table width=400px border=1>";
+    
     foreach ($stmt->fetchAll() as $row) {
+        echo "<tr>";
+            echo  "<td>";
         echo $row["id"];
         echo " ";
+            echo  "</td>";
+            
+            echo  "<td>";
+        echo "<img src=uploads/$row[name].jpg height=42 weight=42>";
+        echo " ";
+            echo  "</td>";
+            
+            echo  "<td>";
         echo $row["name"];
         echo "<input type=checkbox  name=user[] value=$row[id] />";
+            echo  "</td>";
+        echo "<tr>";
         echo '</br>';
     }
+    
+    echo  "</table>";
+
     ?>
     
     <input type="submit" name="submit1" value="DELETE"/>
